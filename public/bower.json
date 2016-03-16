@@ -1,0 +1,23 @@
+{
+  "name": "App",
+  "authors": [
+    "AlexPlex <atellmer@gmail.com>"
+  ],
+  "description": "uranium app",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "app"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.5.0",
+    "angular-material": "~1.0.6",
+    "AngularHammer": "ryanmullins-angular-hammer#~2.1.10",
+    "angular-ui-router": "~0.2.18",
+    "angular-sanitize": "~1.5.0",
+    "valdr": "~1.1.5"
+  }
+}

@@ -1,0 +1,17 @@
+<div class="fab-container" ng-cloak>
+	<md-fab-speed-dial md-open="vm.isOpen" md-direction="{{vm.selectedDirection}}" ng-class="vm.selectedMode">
+		<md-fab-trigger>
+			<md-button aria-label="menu" class="md-fab fab">
+				<md-icon ng-class="{'fab-icon-hover':vm.isOpen}" md-font-set="material-icons fab-icon">add</md-icon>
+			</md-button>
+		</md-fab-trigger>
+		<md-fab-actions>
+			<md-button hm-tap="showDialog($event)" ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Заказать" class="md-fab md-raised md-mini fab-mini">
+				<md-icon md-font-set="material-icons fab-mini-icon">phone</md-icon>
+			</md-button>
+			<md-button hm-tap="moveUp()" ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Наверх" class="md-fab md-raised md-mini">
+				<md-icon md-font-set="material-icons fab-mini-icon">arrow_upward</md-icon>
+			</md-button>
+		</md-fab-actions>
+	</md-fab-speed-dial>
+</div>

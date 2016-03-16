@@ -1,0 +1,11 @@
+
+<div>
+<style>
+	.cover-item::after {
+		background-image: linear-gradient(90deg, {{::item.first_color}}, {{::item.second_color}});
+	}
+</style>
+	<div class="cover-item">
+		<a class="cover-item__link" target="blank" href="{{::item.link}}">{{::item.title}}</a>
+	</div>
+</div>

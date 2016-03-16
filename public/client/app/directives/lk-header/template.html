@@ -1,0 +1,64 @@
+<div>
+	<header md-whiteframe="4" class="header-fixed">
+		<md-content>
+			<md-toolbar>
+				<div class="md-toolbar-tools header">
+					<md-button ng-click="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
+						<md-icon md-font-set="material-icons type-color">menu</md-icon>
+					</md-button>
+					<div ui-sref="root" class="logo"></div>
+					<span flex></span>
+					<nav>
+						<md-button hm-tap="showDialog($event)" class="md-icon-button phone-btn" aria-label="phone">
+							<md-icon md-font-set="material-icons type-color">phone</md-icon>
+						</md-button>
+						<div class="header__links">
+							<md-button aria-haspopup="true" hm-tap="showDialog($event)" class="type-color"><span class="header__phone">+7(980)800-89-00</span></md-button>
+							<md-button aria-haspopup="true" ui-sref="root" class="type-color">Главная</md-button>
+							<md-button aria-haspopup="true" ui-sref="blog" class="type-color">Блог</md-button>
+							<md-button aria-haspopup="true" ui-sref="contacts" class="type-color">Контакты</md-button>
+						</div>
+					</nav>
+				</div>
+			</md-toolbar>
+		</md-content>
+	</header>
+	<section layout="row" flex>
+		<md-sidenav class="md-sidenav-left position-fixed" md-component-id="menu" md-whiteframe="2">
+			<md-toolbar>
+				<h1 class="md-toolbar-tools header-menu"><div class="logo logo--invert"></div></h1>
+			</md-toolbar>
+			<md-divider></md-divider>
+			<nav>
+				<md-list ng-controller="LinksCtrl">
+					<a ui-sref="root" class="menu__item">
+						<md-list-item aria-haspopup="true" ng-click="goTo()">
+							<p>Главная</p>
+						</md-list-item>
+					</a>
+					<a ui-sref="blog" class="menu__item">
+						<md-list-item aria-haspopup="true" ng-click="goTo()">
+							<p>Блог</p>
+						</md-list-item>
+					</a>
+					<a ui-sref="contacts" class="menu__item">
+						<md-list-item aria-haspopup="true" ng-click="goTo()">
+							<p>Контакты</p>
+						</md-list-item>
+					</a>
+				</md-list>
+			</nav>
+			<md-divider></md-divider>
+			<md-content>
+				<div ng-controller="SocialCtrl" class="social">
+					<div aria-haspopup="true" hm-tap="vk()" class="social__btn social__btn--vk"></div>
+					<div aria-haspopup="true" hm-tap="ok()" class="social__btn social__btn--ok"></div>
+					<div aria-haspopup="true" hm-tap="fb()" class="social__btn social__btn--fb"></div>
+					<div aria-haspopup="true" hm-tap="tw()" class="social__btn social__btn--tw"></div>
+				</div>
+			</md-content>
+			<md-divider></md-divider>
+			<h2 class="menu__phone">+7(980)800-89-00</h2>
+		</md-sidenav>
+	</section>
+</div>
