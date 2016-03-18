@@ -10,7 +10,6 @@
 	function OrderCtrl($scope, $http, $mdDialog, lkStore) {
 		var projects = [];
 		var services = [];
-		//var path = '../public/client/app/models/prices.model.json';
 		var path = '/getprices';
 		var parent = angular.element(document.querySelector('body'));
 

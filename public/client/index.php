@@ -34,13 +34,13 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Likearts | Мы делаем сайты на заказ для вашего бизнеса">
 	<meta property="og:description" content="Likearts: только качественные сайты, потому что репутация решает.">
-	<meta property="og:image" content="http://likearts.ru/public/client/img/social-pic.jpg">
+	<meta property="og:image" content="public/client/img/social-pic.jpg">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@likearts">
 	<meta name="twitter:creator" content="@likearts">
 	<meta name="twitter:title" content="likearts.ru">
 	<meta name="twitter:description" content="Мы делаем сайты на заказ для вашего бизнеса">
-	<meta name="twitter:image" content="http://likearts.ru/public/client/img/social-pic.jpg">
+	<meta name="twitter:image" content="public/client/img/social-pic.jpg">
 	<title>Likearts | Мы делаем сайты на заказ для вашего бизнеса</title>
 	<meta name="description" content="Likearts: только качественные сайты, потому что репутация решает.">
 	<meta name="keywords" content="создание сайтов, разработка сайтов, лендинг пейдж, landing page, сайт под ключ">

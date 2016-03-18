@@ -11,8 +11,8 @@
 	function SocialCtrl($scope, lkSocial) {
 		var site = 'http://likearts.ru',
 			title = 'LIKEARTS',
-			image = 'http://s.fotorama.io/1.jpg',
-			description = 'Lorem Ipsum Dolor';
+			image = 'http://likearts.ru/public/client/img/social-pic.jpg',
+			description = 'Likearts: только качественные сайты, потому что репутация решает.';
 
 		$scope.vk = function () {
 			return vk();
