@@ -34,13 +34,13 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Likearts | Мы делаем сайты на заказ для вашего бизнеса">
 	<meta property="og:description" content="Likearts: только качественные сайты, потому что репутация решает.">
-	<meta property="og:image" content="public/client/img/social-pic.jpg">
+	<meta property="og:image" content="public/client/img/social.png">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@likearts">
 	<meta name="twitter:creator" content="@likearts">
 	<meta name="twitter:title" content="likearts.ru">
 	<meta name="twitter:description" content="Мы делаем сайты на заказ для вашего бизнеса">
-	<meta name="twitter:image" content="public/client/img/social-pic.jpg">
+	<meta name="twitter:image" content="public/client/img/social.png">
 	<title>Likearts | Мы делаем сайты на заказ для вашего бизнеса</title>
 	<meta name="description" content="Likearts: только качественные сайты, потому что репутация решает.">
 	<meta name="keywords" content="создание сайтов, разработка сайтов, лендинг пейдж, landing page, сайт под ключ">
@@ -70,6 +70,37 @@
 	<script src="public/client/bower_components/valdr/valdr.min.js"></script>
 	<script src="public/client/bower_components/valdr/valdr-message.min.js"></script>
 	<script src="public/client/dist/bundle.min.js"></script>
+	<script>
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function () {
+				try {
+					w.yaCounter36426520 = new Ya.Metrika({
+						id: 36426520,
+						clickmap: true,
+						trackLinks: true,
+						accurateTrackBounce: true,
+						webvisor: true
+					});
+				} catch (e) {}
+			});
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () {
+					n.parentNode.insertBefore(s, n);
+				};
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://mc.yandex.ru/metrika/watch.js";
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else {
+				f();
+			}
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript>
+		<div><img src="https://mc.yandex.ru/watch/36426520" style="position:absolute; left:-9999px;" alt="" /></div>
+	</noscript>
 </body>
 
 </html>

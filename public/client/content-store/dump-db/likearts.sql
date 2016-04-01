@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 18, 2016 at 09:56 
+-- Generation Time: Apr 01, 2016 at 04:25 
 -- Server version: 5.5.45
 -- PHP Version: 5.6.12
 
@@ -65,12 +65,12 @@ CREATE TABLE IF NOT EXISTS `portfolios` (
 --
 
 INSERT INTO `portfolios` (`id`, `title`, `description`, `link`, `name`, `image`, `first_color`, `second_color`, `created_at`, `updated_at`) VALUES
-(1, 'Sitename1', '1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://www.somelink.com', 'somename', 'public/client/img/content/portfolio/1.png', '#8BC34A', '#009688', '2016-03-13 09:00:15', '2016-03-13 09:00:17'),
-(2, 'Sitename2', '2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://www.somelink.com', 'somename', 'public/client/img/content/portfolio/2.png', '#3F51B5', '#2196F3', '2016-03-13 09:01:55', '2016-03-13 09:01:56'),
-(3, 'Sitename3', '3Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://www.somelink.com', 'somename', 'public/client/img/content/portfolio/3.png', '#3F51B5', '#2196F3', '2016-03-13 09:03:03', '2016-03-13 09:03:05'),
-(4, 'Sitename4', '4Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://www.somelink.com', 'somename', 'public/client/img/content/portfolio/4.png', '#3F51B5', '#2196F3', '2016-03-13 09:04:03', '2016-03-13 09:04:05'),
-(5, 'Sitename5', '5Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://www.somelink.com', 'somename', 'public/client/img/content/portfolio/5.png', '#3F51B5', '#2196F3', '2016-03-13 09:05:06', '2016-03-13 09:06:08'),
-(6, 'Sitename6', '6Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'www.somelink.com', 'somename', 'public/client/img/content/portfolio/6.png', '#3F51B5', '#2196F3', '2016-03-13 09:06:06', '2016-03-13 09:06:10');
+(1, 'Стоматология доктора Утяпова', '1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://garantslv.ru/', 'somename', 'public/client/img/content/portfolio/1.png', '#8BC34A', '#009688', '2016-03-13 09:00:15', '2016-03-13 09:00:17'),
+(2, 'Индустрия красоты', 'Крупнейший поставщик товаров для салонов красоты.', 'http://nail-industry.ru\r\n', 'somename', 'public/client/img/content/portfolio/2.png', '#3F51B5', '#2196F3', '2016-03-13 09:01:55', '2016-03-13 09:01:56'),
+(3, 'CoPartner', '3Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://co-part.ru/', 'somename', 'public/client/img/content/portfolio/3.png', '#3F51B5', '#2196F3', '2016-03-13 09:03:03', '2016-03-13 09:03:05'),
+(4, 'Миногинъ', 'Семейное предприятие, которое оказывает услуги в области фотосъемки, а также предлагает широкий выбор изделий ручной работы.', 'http://skminogin.ru', 'somename', 'public/client/img/content/portfolio/4.png', '#3F51B5', '#2196F3', '2016-03-13 09:04:03', '2016-03-13 09:04:05'),
+(5, 'ИнвестСтройМелеуз', '5Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://investstroimeleuz.ru/', 'somename', 'public/client/img/content/portfolio/5.png', '#3F51B5', '#2196F3', '2016-03-13 09:05:06', '2016-03-13 09:06:08'),
+(6, 'Справочная служба', '6Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus purus vel libero rhoncus, ut volutpat neque tempus. Aliquam convallis erat ac venenatis maximus.', 'http://csslv.ru/', 'somename', 'public/client/img/content/portfolio/6.png', '#3F51B5', '#2196F3', '2016-03-13 09:06:06', '2016-03-13 09:06:10');
 
 -- --------------------------------------------------------
 

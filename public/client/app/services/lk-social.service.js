@@ -45,6 +45,12 @@
 				url += '&counturl=' + encodeURIComponent(purl);
 				this.popup(url);
 			},
+			yt: function (purl) {
+				var url;
+				url = 'http://www.youtube.com/channel/';
+				url += purl;
+				window.open(url);
+			},
 			popup: function (url) {
 				$window.open(url, '', 'toolbar=0,status=0,width=626,height=436,left=' + (screen.availWidth - 626) / 2 + ',top=' + (screen.availHeight - 436) / 2);
 			}

@@ -6,9 +6,9 @@
 		.module('app')
 		.controller('FABCtrl', FABCtrl);
 
-	FABCtrl.$inject = ['$scope', '$mdDialog'];
+	FABCtrl.$inject = ['$scope', '$mdDialog', 'lkBack'];
 
-	function FABCtrl($scope, $mdDialog) {
+	function FABCtrl($scope, $mdDialog, lkBack) {
 		var elementBody = angular.element(document.querySelector('body')),
 			elementHtml = angular.element(document.querySelector('html')),
 			parent = angular.element(document.querySelector('body'));
@@ -18,9 +18,10 @@
 		this.selectedDirection = 'up';
 		this.hover = false;
 
-		$scope.moveUp = function () {
-			return moveUp();
-		}
+		$scope.moveUp = moveUp;
+
+		$scope.goBack = lkBack.goBack;
+
 
 		$scope.showDialog = function (ev) {
 			return showDialog(ev);

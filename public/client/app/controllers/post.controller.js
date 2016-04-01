@@ -13,16 +13,8 @@
 		var id = $stateParams.id,
 			path = '/getpost/' + id;
 
-		$scope.goBack = function () {
-			return goBack();
-		}
-
 		$http.get(path).success(function (response) {
 			$scope.post = response;
 		});
-
-		function goBack() {
-			history.back();
-		}
 	}
 })();
