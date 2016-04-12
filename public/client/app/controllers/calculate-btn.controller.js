@@ -6,17 +6,16 @@
 		.module('app')
 		.controller('CalculateBtnCtrl', CalculateBtnCtrl);
 
-	CalculateBtnCtrl.$inject = ['$scope'];
+	CalculateBtnCtrl.$inject = [];
 
-	function CalculateBtnCtrl($scope) {
-		var element = angular.element(document.querySelector('#scroll-here')),
-			elementBody = angular.element(document.querySelector('body')),
-			elementHtml = angular.element(document.querySelector('html'));
+	function CalculateBtnCtrl() {
+		var vm = this;
+		var element = angular.element(document.querySelector('#scroll-here'));
+		var elementBody = angular.element(document.querySelector('body'));
+		var elementHtml = angular.element(document.querySelector('html'));
 
-		$scope.go = function () {
-			return go();
-		}
-
+		vm.go = go;
+		
 		function go() {
 			elementBody.animate({
 				scrollTop: (element.offset().top - 50)

@@ -30,19 +30,19 @@
 			</md-toolbar>
 			<md-divider></md-divider>
 			<nav>
-				<md-list ng-controller="LinksCtrl">
+				<md-list ng-controller="LinksCtrl as vm">
 					<a ui-sref="root" class="menu__item">
-						<md-list-item aria-haspopup="true" ng-click="goTo()">
+						<md-list-item aria-haspopup="true" ng-click="vm.goTo()">
 							<p>Главная</p>
 						</md-list-item>
 					</a>
 					<a ui-sref="blog" class="menu__item">
-						<md-list-item aria-haspopup="true" ng-click="goTo()">
+						<md-list-item aria-haspopup="true" ng-click="vm.goTo()">
 							<p>Блог</p>
 						</md-list-item>
 					</a>
 					<a ui-sref="contacts" class="menu__item">
-						<md-list-item aria-haspopup="true" ng-click="goTo()">
+						<md-list-item aria-haspopup="true" ng-click="vm.goTo()">
 							<p>Контакты</p>
 						</md-list-item>
 					</a>
@@ -50,11 +50,11 @@
 			</nav>
 			<md-divider></md-divider>
 			<md-content>
-				<div ng-controller="SocialCtrl" class="social">
-					<div aria-haspopup="true" hm-tap="vk()" class="social__btn social__btn--vk"></div>
-					<div aria-haspopup="true" hm-tap="yt()" class="social__btn social__btn--yt"></div>
-					<div aria-haspopup="true" hm-tap="fb()" class="social__btn social__btn--fb"></div>
-					<div aria-haspopup="true" hm-tap="tw()" class="social__btn social__btn--tw"></div>
+				<div ng-controller="SocialCtrl as vm" class="social">
+					<div aria-haspopup="true" hm-tap="vm.vk()" class="social__btn social__btn--vk"></div>
+					<div aria-haspopup="true" hm-tap="vm.yt()" class="social__btn social__btn--yt"></div>
+					<div aria-haspopup="true" hm-tap="vm.fb()" class="social__btn social__btn--fb"></div>
+					<div aria-haspopup="true" hm-tap="vm.tw()" class="social__btn social__btn--tw"></div>
 				</div>
 			</md-content>
 			<md-divider></md-divider>

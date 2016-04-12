@@ -13,13 +13,11 @@
 		var parent = angular.element(document.querySelector('body'));
 
 		$scope.toggle = function () {
-			return buildToggler('menu');
+			buildToggler('menu');
 		}
-
 		$scope.isOpen = function () {
 			return $mdSidenav('menu').isOpen();
 		}
-
 		$scope.showDialog = function (ev) {
 			return showDialog(ev);
 		}
@@ -34,7 +32,8 @@
 				parent: parent,
 				targetEvent: ev,
 				clickOutsideToClose: true,
-				controller: 'PhoneDialogCtrl'
+				controller: 'PhoneDialogCtrl',
+				controllerAs: 'vm'
 			});
 		}
 	}

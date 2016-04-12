@@ -2,9 +2,9 @@
 	<form name="mainOrderForm" novalidate valdr-type="Order">
 		<md-toolbar>
 			<div class="md-toolbar-tools dialog-toolbar">
-				<h2 class="dialog-toolbar__title">Заполните форму...</h2>
+				<h2 class="dialog-toolbar__title">Хочу заказать сайт!</h2>
 				<span flex></span>
-				<md-button class="md-icon-button" hm-tap="cancel()">
+				<md-button class="md-icon-button" hm-tap="vm.cancel()">
 					<md-icon class="dialog-toolbar__icon" md-font-set="material-icons">close</md-icon>
 				</md-button>
 			</div>
@@ -13,22 +13,22 @@
 			<md-input-container valdr-form-group class="md-icon-float md-block">
 				<label for="name">Имя</label>
 				<md-icon md-font-set="material-icons dialog-content__icon">person</md-icon>
-				<input type="text" id="name" name="name" ng-model="data.name">
+				<input type="text" id="name" name="name" ng-model="vm.data.name">
 			</md-input-container>
 			<md-input-container valdr-form-group class="md-icon-float md-block">
 				<label for="phone">Телефон</label>
 				<md-icon md-font-set="material-icons dialog-content__icon">phone</md-icon>
-				<input type="text" id="phone" name="phone" ng-model="data.phone">
+				<input type="text" id="phone" name="phone" ng-model="vm.data.phone">
 			</md-input-container>
 			<md-input-container valdr-form-group class="md-icon-float md-block">
 				<label for="email">E-mail</label>
 				<md-icon md-font-set="material-icons dialog-content__icon">email</md-icon>
-				<input type="email" id="email" name="email" ng-model="data.email">
+				<input type="email" id="email" name="email" ng-model="vm.data.email">
 			</md-input-container>
 		</md-dialog-content>
 		<md-dialog-actions layout="row">
 			<span flex></span>
-			<md-button hm-tap="send()" ng-disabled="mainOrderForm.$invalid" class="md-primary md-hue-1">
+			<md-button hm-tap="vm.send()" ng-disabled="mainOrderForm.$invalid" class="md-primary md-hue-1">
 				Заказать
 			</md-button>
 		</md-dialog-actions>

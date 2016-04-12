@@ -11,7 +11,8 @@
 			templateUrl: '../public/client/app/directives/lk-portfolio-list/template.html',
 			replace: true,
 			restrict: 'E',
-			controller: 'PortfolioCtrl'
+			controller: 'PortfolioCtrl',
+			controllerAs: 'vm'
 		}
 	}
 })();

@@ -8,36 +8,36 @@
 	OrderCtrl.$inject = ['$scope', '$http', '$mdDialog', 'lkStore'];
 
 	function OrderCtrl($scope, $http, $mdDialog, lkStore) {
-		var projects = [];
-		var services = [];
 		var path = '/getprices';
 		var parent = angular.element(document.querySelector('body'));
 
-		$http.get(path).success(function (response) {
-			var j = 0;
-			var k = 0;
-			for (var i = 0; i < response.length; i++) {
-				if (response[i].type === 'сайт') {
-					projects[j] = response[i];
-					j++;
-				}
-				if (response[i].type === 'услуга') {
-					services[k] = response[i];
-					k++;
-				}
-			}
-			$scope.projects = projects;
-			$scope.services = services;
-		});
-
+		$scope.projects = [];
+		$scope.services = [];
 		$scope.cost = 0;
-
-		$scope.calculate = function () {
-			return calculate();
-		}
-
+		$scope.calculate = calculate;
 		$scope.showDialog = function (ev) {
 			return showDialog(ev);
+		}
+
+		activate();
+
+		function activate() {
+			$http.get(path).success(function (response) {
+				var j = 0;
+				var k = 0;
+				for (var i = 0; i < response.length; i++) {
+					if (response[i].type === 'сайт') {
+						$scope.projects[j] = response[i];
+						j++;
+					}
+					if (response[i].type === 'услуга') {
+						$scope.services[k] = response[i];
+						k++;
+					}
+				}
+
+
+			});
 		}
 
 		function calculate() {
@@ -90,7 +90,8 @@
 				parent: parent,
 				targetEvent: ev,
 				clickOutsideToClose: true,
-				controller: 'OrderDialogCtrl'
+				controller: 'OrderDialogCtrl',
+				controllerAs: 'vm'
 			});
 		}
 	}

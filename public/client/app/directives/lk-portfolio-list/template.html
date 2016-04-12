@@ -1,7 +1,7 @@
 <div class="portfolio">
 	<h2 class="portfolio__title">Примеры работ</h2>
 	<div class="portfolio-container">
-		<div ng-repeat="item in items track by $index" class="portfolio-item" style="background-image:url({{::item.image}});">
+		<div ng-repeat="item in vm.items" class="portfolio-item" style="background-image:url({{::item.image}});">
 			<div class="paper-shadow-z2 portfolio-item__cover">
 				<div>
 					<div class="portfolio-item__title">{{::item.title}}</div>

@@ -6,18 +6,16 @@
 		.module('app')
 		.controller('LinksCtrl', LinksCtrl);
 
-	LinksCtrl.$inject = ['$scope'];
+	LinksCtrl.$inject = [];
 
-	function LinksCtrl($scope) {
+	function LinksCtrl() {
+		var vm = this;
 
-		$scope.goTo = function () {
-			return goTo();
-		}
-
+		vm.goTo = goTo;
+		
 		function goTo() {
 			return false
 		}
-
 	}
 
 })();

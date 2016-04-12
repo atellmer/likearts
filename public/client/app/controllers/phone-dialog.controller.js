@@ -7,34 +7,29 @@
 		.module('app')
 		.controller('PhoneDialogCtrl', PhoneDialogCtrl);
 
-	PhoneDialogCtrl.$inject = ['$scope', '$http', '$sanitize', '$mdDialog', '$mdToast'];
+	PhoneDialogCtrl.$inject = ['$http', '$sanitize', '$mdDialog', '$mdToast'];
 
-	function PhoneDialogCtrl($scope, $http, $sanitize, $mdDialog, $mdToast) {
+	function PhoneDialogCtrl($http, $sanitize, $mdDialog, $mdToast) {
+		var vm = this;	
+		var toast = angular.element(document.querySelector('#toast'));
 		var data = {
-				name: '',
-				phone: ''
-			},
-			toast = angular.element(document.querySelector('#toast'));
-
-		$scope.data = data;
-
-		$scope.cancel = function () {
-			$mdDialog.cancel();
-		}
-
-		$scope.send = function () {
-			return send();
-		}
-
+				name: null,
+				phone: null
+			};
+			
+		vm.data = data;
+		vm.send = send;
+		vm.cancel = cancel;
+		
 		function send() {
-			data.name = $sanitize($scope.data.name);
-			data.phone = $sanitize($scope.data.phone);
+			data.name = $sanitize(vm.data.name);
+			data.phone = $sanitize(vm.data.phone);
 
 			data = JSON.stringify(data);
 
+			console.log(data);
+			
 			$http.post('/phone', data).success(function (response) {
-				console.log(response);
-
 				$mdToast.show(
 					$mdToast.simple()
 					.textContent('Ок! Мы вам перезвоним!')
@@ -43,8 +38,12 @@
 					.parent(toast)
 				);
 
-				$mdDialog.cancel();
+				cancel();
 			});
+		}
+		
+		function cancel(){
+			$mdDialog.cancel();
 		}
 	}
 })();

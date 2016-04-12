@@ -6,24 +6,21 @@
 		.module('app')
 		.controller('FABCtrl', FABCtrl);
 
-	FABCtrl.$inject = ['$scope', '$mdDialog', 'lkBack'];
+	FABCtrl.$inject = ['$mdDialog', 'lkBack'];
 
-	function FABCtrl($scope, $mdDialog, lkBack) {
-		var elementBody = angular.element(document.querySelector('body')),
-			elementHtml = angular.element(document.querySelector('html')),
-			parent = angular.element(document.querySelector('body'));
+	function FABCtrl($mdDialog, lkBack) {
+		var vm = this;
+		var elementBody = angular.element(document.querySelector('body'));
+		var elementHtml = angular.element(document.querySelector('html'));
 
-		this.isOpen = false;
-		this.selectedMode = 'md-fling';
-		this.selectedDirection = 'up';
-		this.hover = false;
+		vm.isOpen = false;
+		vm.selectedMode = 'md-fling';
+		vm.selectedDirection = 'up';
+		vm.hover = false;
 
-		$scope.moveUp = moveUp;
-
-		$scope.goBack = lkBack.goBack;
-
-
-		$scope.showDialog = function (ev) {
+		vm.moveUp = moveUp;
+		vm.goBack = lkBack.goBack;
+		vm.showDialog = function (ev) {
 			return showDialog(ev);
 		}
 
@@ -38,11 +35,12 @@
 
 		function showDialog(ev) {
 			$mdDialog.show({
-				templateUrl: '../public/client/app/views/phone-dialog.html',
-				parent: parent,
+				templateUrl: '../public/client/app/views/order-dialog.html',
+				parent: elementBody,
 				targetEvent: ev,
 				clickOutsideToClose: true,
-				controller: 'PhoneDialogCtrl'
+				controller: 'OrderDialogCtrl',
+				controllerAs: 'vm'
 			});
 		}
 	}

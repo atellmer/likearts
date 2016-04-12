@@ -6,13 +6,18 @@
 		.module('app')
 		.controller('PortfolioCtrl', PortfolioCtrl);
 
-	PortfolioCtrl.$inject = ['$scope', '$http'];
+	PortfolioCtrl.$inject = ['$http'];
 
-	function PortfolioCtrl($scope, $http) {
+	function PortfolioCtrl($http) {
+		var vm = this;
 		var path = '/getportfolio';
 
-		$http.get(path).success(function (response) {
-			$scope.items = response;
-		});
+		activate();
+
+		function activate() {
+			$http.get(path).success(function (response) {
+				vm.items = response;
+			});
+		}
 	}
 })();
