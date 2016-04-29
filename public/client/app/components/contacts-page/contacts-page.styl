@@ -1,0 +1,43 @@
+@import 'nib'
+
+.contacts-container .contacts
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	width 100%
+	height 100vh
+	background-image url(../img/contacts/1.jpg)
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	
+.contacts-container .contacts::after
+	content ''
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100vh
+	background-image linear-gradient(90deg, #3F51B5, #2196F3)
+	opacity 0.95
+	
+.contacts-container .contact-list
+	margin-top $base-height * 2
+	z-index 1
+	color #fff
+	
+.contacts-container .list-item
+	display flex
+	flex-direction column
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	
+.contacts-container .contact-list__item
+	font-weight 300
+	font-size 2.3em
+	transition font-size .2s ease-in-out
+	@media screen and (max-width: 600px)
+		font-size 1.4em

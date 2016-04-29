@@ -9,7 +9,13 @@ var gulp = require('gulp'),
 
 var path = {
 	root: 'client/',
-	stylus: function () {
+	app: function () {
+		return this.root + 'app/'
+	},
+	components: function () {
+		return this.app() + 'components/'
+	},
+	stylesheets: function () {
 		return this.root + 'stylesheets/'
 	},
 	dist: function () {
@@ -29,11 +35,11 @@ gulp.task('connect', function () {
 //js
 gulp.task('scripts', function () {
 	return gulp.src([
-		path.root + 'app/**/*.module.js',
-		path.root + 'app/**/*.config.js',
-		path.root + 'app/**/*.service.js',
-		path.root + 'app/**/directive.js',
-		path.root + 'app/**/*.controller.js'
+		path.app() + '**/*.module.js',
+		path.app() + '**/*.config.js',
+		path.app() + '**/*.service.js',
+		path.app() + '**/*.directive.js',
+		path.app() + '**/*.controller.js'
 	])
 		.pipe(concat('bundle.js'))
 		.pipe(uglify())
@@ -43,8 +49,11 @@ gulp.task('scripts', function () {
 });
 
 //stylus
-gulp.task('styl', function () {
-	return gulp.src(path.stylus() + '*.styl')
+gulp.task('stylus', function () {
+	return gulp.src([
+				path.stylesheets() + '**/*.styl',
+				path.components() + '**/*.styl'
+			])
 		.pipe(concat('bundle.styl'))
 		.pipe(stylus({
 			use: [nib()],
@@ -58,22 +67,22 @@ gulp.task('styl', function () {
 //html
 gulp.task('html', function () {
 	return gulp.src([
-				path.root + 'index.html',
-				path.root + 'app/views/*.html',
-				path.root + 'app/directives/**/*.html'
+				path.root + '*.html',
+				path.app() + '**/*.html'
 			])
 		.pipe(connect.reload());
 });
 
 //watch
 gulp.task('watch', function () {
-	gulp.watch(path.root + 'app/**/*.*', ['scripts']);
-	gulp.watch(path.stylus() + '*.styl', ['styl']);
+	gulp.watch(path.app() + '**/*.js', ['scripts']);
 	gulp.watch([
-		path.root + 'index.html',
-		path.root + 'app/views/*.html',
-		path.root + 'app/directives/**/*.html'], ['html']);
+				path.stylesheets() + '**/*.styl',
+				path.components() + '**/*.styl'], ['stylus']);
+	gulp.watch([
+		path.root + '*.html',
+		path.app() + '**/*.html'], ['html']);
 
 });
 
-gulp.task('default', ['connect', 'scripts', 'styl', 'html', 'watch']);
+gulp.task('default', ['connect', 'scripts', 'stylus', 'html', 'watch']);

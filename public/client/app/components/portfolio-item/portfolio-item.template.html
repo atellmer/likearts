@@ -1,0 +1,10 @@
+<div class="portfolio-item-container">
+	<style>
+		.cover-item::after {
+			background-image: linear-gradient(90deg, {{::vm.item.first_color}}, {{::vm.item.second_color}});
+		}
+	</style>
+	<div class="cover-item">
+		<a class="cover-item__link" target="blank" href="{{::vm.item.link}}">{{::vm.item.title}}</a>
+	</div>
+</div>

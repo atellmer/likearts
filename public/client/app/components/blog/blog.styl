@@ -1,0 +1,14 @@
+@import 'nib'
+
+.blog-container .card
+	display block
+	transition all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms
+	&:hover
+		@extend .paper-shadow-z3
+	
+.blog-container .card__action
+	padding 8px
+		
+.blog-container .card__anonce
+	max-height 13em
+	@extend .line-clamp

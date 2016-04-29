@@ -1,0 +1,66 @@
+@import 'nib'
+
+.cover-post
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	width 100%
+	height 550px
+	position relative
+	margin-top ($base-height * 2)
+	background-repeat no-repeat;
+	background-size cover
+	background-position center
+	transition height .2s ease-in-out
+	@media screen and (max-width: 600px)
+		margin-top ($base-height * 2) - 8
+		height 200px
+		
+.cover-post::after
+	content ''
+	width 100%
+	height 550px
+	position absolute
+	top 0
+	left 0
+	background-color #000
+	opacity 0.5
+	transition height .2s ease-in-out
+	@media screen and (max-width: 600px)
+		height 200px
+
+.cover-post__title
+	color #FFF
+	z-index 1
+	font-weight 700
+	transition font-size .2s ease-in-out
+	text-align center
+	@media screen and (max-width: 992px)
+		font-size 3em
+	@media screen and (max-width: 600px)
+		font-size 1.3em
+		line-height 1
+	
+.post-content
+	max-width 950px
+	padding 100px 5% 0 5%
+	font-family 'Lora', serif
+	font-size 1.4em
+	color $primary-text-color
+	line-height 28px
+	transition font-size .2s ease-in-out
+	@media screen and (max-width: 1140px)
+		padding 40px 5% 0 5%
+	@media screen and (max-width: 600px)
+		font-size 1em
+		line-height 22px
+		padding 30px 5% 0 5%
+	@media screen and (max-width: 320px)
+		font-size 0.9em
+		line-height 22px
+		padding 20px 20px 0 20px
+	
+.post-content p
+	margin-bottom 25px

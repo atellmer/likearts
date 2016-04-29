@@ -1,0 +1,45 @@
+@import 'nib'
+
+.portfolio-item-container .cover-item
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	width 100%
+	height 100vh
+	transition height .2s ease-in-out
+	@media screen and (max-width: 600px)
+		height 50vh
+	
+.portfolio-item-container .cover-item::after
+	display block
+	content ''
+	width 100%
+	height 100vh
+	position absolute
+	top 0
+	left 0
+	opacity 0.8
+	animation background 30s ease-in-out infinite;
+	transition height .2s ease-in-out
+	@media screen and (max-width: 600px)
+		height 50vh
+		
+		
+.portfolio-item-container .cover-item__link
+	margin-top $base-height * 2
+	color #FFF
+	z-index 1
+	font-weight 100
+	font-size 3em
+	text-shadow 0 0 1px #999
+	&:hover
+		color #FFF
+	&:focus
+		color #FFF
+	&:active
+		color #FFF
+	transition font-size .2s ease-in-out
+	@media screen and (max-width: 600px)
+		font-size 2em	

@@ -1,0 +1,85 @@
+@import 'nib'
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100&subset=latin,cyrillic,cyrillic-ext)
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700&subset=latin,cyrillic) 
+
+//material colors
+$dark-primary-color = #512DA8;
+$primary-color = #673AB7; 
+$light-primary-color = #D1C4E9;
+$accent-color = #FF4081;
+$primary-text-color = #212121;
+$secondary-text-color = #727272;
+$divider-color = #B6B6B6;
+$bg-color = #FAFAFA;
+$text-color = rgba(0,0,0,0.87);
+
+//base height
+$base-height = 32px;
+
+//helpers
+.no-padding
+	padding 0
+	margin 0
+	
+.paper-shadow-z1
+	box-shadow 0 1px 6px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.12)!important
+	
+.paper-shadow-z2
+	box-shadow 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)!important
+	
+.paper-shadow-z3
+	box-shadow 0 10px 30px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.23)!important
+	
+.paper-shadow-z4
+	box-shadow 0 14px 45px rgba(0,0,0,0.25), 0 10px 18px rgba(0,0,0,0.22)!important
+	
+.paper-shadow-z5
+	box-shadow 0 19px 60px rgba(0,0,0,0.3), 0 15px 20px rgba(0,0,0,0.22)!important
+	
+.line-clamp
+	overflow hidden
+	display -webkit-box
+	-webkit-line-clamp 10
+	-webkit-box-orient vertical
+	text-overflow ellipsis
+  
+html
+	overflow-y scroll
+	overflow-x hidden!important
+	
+body
+	background $bg-color
+	font-family 'Roboto', sans-serif
+	font-smoothing antialiased
+	overflow-scrolling touch
+
+a, 
+a:hover, 
+a:active, 
+a:focus
+	outline none
+	text-decoration none
+	
+md-toast
+	position fixed!important
+
+.container-fluid
+	background $bg-color
+	padding 0
+
+.container
+	box-sizing border-box
+	margin 0 auto
+	padding-top ($base-height * 2) + 8
+	@media screen and (max-width: 600px)
+		padding-top ($base-height * 2)
+		
+.md-primary
+	color $accent-color!important
+
+.wrapper
+	opacity 0
+	transition opacity 2.2s ease-in-out
+
+.smooth
+	opacity 1

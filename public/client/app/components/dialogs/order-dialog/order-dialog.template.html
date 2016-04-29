@@ -1,0 +1,38 @@
+<div class="dialogs-container">
+	<md-dialog class="dialog" data-aria-label="Заказать разработку">
+		<form name="mainOrderForm" data-novalidate data-valdr-type="Order">
+			<md-toolbar>
+				<div class="md-toolbar-tools dialog-toolbar">
+					<h2 class="dialog-toolbar__title">Хочу заказать сайт!</h2>
+					<span flex></span>
+					<md-button class="md-icon-button" data-hm-tap="vm.cancel()">
+						<md-icon class="dialog-toolbar__icon" data-md-font-set="material-icons">close</md-icon>
+					</md-button>
+				</div>
+			</md-toolbar>
+			<md-dialog-content class="dialog-content">
+				<md-input-container data-valdr-form-group class="md-icon-float md-block">
+					<label for="name">Имя</label>
+					<md-icon data-md-font-set="material-icons dialog-content__icon">person</md-icon>
+					<input type="text" id="name" name="name" data-ng-model="vm.data.name">
+				</md-input-container>
+				<md-input-container valdr-form-group class="md-icon-float md-block">
+					<label for="phone">Телефон</label>
+					<md-icon data-md-font-set="material-icons dialog-content__icon">phone</md-icon>
+					<input type="text" id="phone" name="phone" data-ng-model="vm.data.phone">
+				</md-input-container>
+				<md-input-container data-valdr-form-group class="md-icon-float md-block">
+					<label for="email">E-mail</label>
+					<md-icon data-md-font-set="material-icons dialog-content__icon">email</md-icon>
+					<input type="email" id="email" name="email" data-ng-model="vm.data.email">
+				</md-input-container>
+			</md-dialog-content>
+			<md-dialog-actions layout="row">
+				<span flex></span>
+				<md-button data-hm-tap="vm.send()" data-ng-disabled="mainOrderForm.$invalid" class="md-primary md-hue-1">
+					Заказать
+				</md-button>
+			</md-dialog-actions>
+		</form>
+	</md-dialog>
+</div>

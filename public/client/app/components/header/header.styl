@@ -1,0 +1,85 @@
+@import 'nib'
+
+.header-container .header-fixed
+	position fixed
+	width 100%
+	z-index 9
+	
+.header-container .position-fixed
+	position fixed
+	
+.header-container .md-sidenav-backdrop
+	position fixed
+
+.header-container .header
+	background #fff
+	height $base-height * 2
+	max-height $base-height * 2
+	@media screen and (max-width: 600px)
+		height ($base-height * 2) - 8
+		max-height ($base-height * 2) - 8
+	
+.header-container .logo
+	height 50px
+	width 50px
+	position absolute
+	top calc(50% - 25px)
+	left calc(50% - 25px)
+	background-image url(../img/logo.png)
+	background-size cover
+	background-repeat no-repeat
+	background-position center
+	cursor pointer
+	@media screen and (max-width: 600px)
+		height 40px
+		width 40px
+		top calc(50% - 20px)
+		left calc(50% - 20px)
+		
+.header-container .logo--invert
+	background-image url(../img/logo-invert.png)
+	left 16px
+	cursor default
+
+.header-container .header__links
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	@media screen and (max-width: 1200px)
+		display none
+		
+.header-container .type-color
+	color $dark-primary-color!important
+
+.header-container .header-menu
+	@extend .header-container .header
+	background-color #FFF
+	color $secondary-text-color
+	text-transform uppercase
+	letter-spacing 3px
+	cursor default
+	
+.header-container .menu__item
+	color $primary-text-color!important
+	&:hover
+		color $primary-text-color!important
+	&:focus
+		color $primary-text-color!important
+	&:active
+		color $primary-text-color!important
+		
+.header-container .phone-btn
+	display none
+	@media screen and (max-width: 1200px)
+		display block
+		
+.header-container .menu__phone
+	padding 18px 16px 18px 16px
+	font-size 1.4em
+	color $secondary-text-color
+	font-weight 300
+	margin 0 
+
+.header-container .header__phone
+	border-bottom 1px dashed $dark-primary-color
+	margin 0 16px 0 16px

@@ -1,0 +1,33 @@
+@import 'nib'
+
+.dialog
+	width 400px
+	
+.dialog-toolbar
+	background-color #FFF
+	
+.dialog-toolbar h2
+	@media screen and (max-width: 600px)
+		font-size 0.8em
+	
+.dialog-toolbar__title
+	color $primary-text-color
+	
+.dialog-toolbar__icon
+	color $divider-color!important
+	
+.dialog-content
+	max-width 800px
+	max-height 810px
+	padding 16px
+	
+.dialog-content__icon
+	color $secondary-text-color
+    
+.valdr-message
+	display none
+	
+.valdr-message.ng-dirty.ng-invalid.ng-touched
+	display inline
+	color #EF5350
+	font-size 0.9em

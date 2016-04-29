@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" ng-app="app">
+<html lang="ru" data-ng-app="app">
 
 <head>
 	<base href="/">
@@ -54,10 +54,8 @@
 	<link rel="stylesheet" href="public/client/dist/bundle.min.css">
 </head>
 
-<body ng-cloak ng-controller="LoadCtrl">
-	<div class="wrapper" ng-class="{'smooth':onload}">
-		<lk-content></lk-content>
-	</div>
+<body>
+	<lk-container></lk-container>
 	<script src="public/client/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="public/client/bower_components/angular/angular.min.js"></script>
 	<script src="public/client/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>

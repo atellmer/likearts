@@ -1,0 +1,201 @@
+@import 'nib'
+	
+.landing-page-container .cover-landing
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	align-content center 
+	width 100%
+	min-height 100vh
+	height auto
+	background-image url(../img/landing/1.jpg)
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	@media screen and (max-width: 600px)
+		margin-top ($base-height * 2) - 8
+		min-height 300px
+
+.landing-page-container .cover-landing::after
+	content ''
+	width 100%
+	min-height 100vh
+	height auto
+	position absolute
+	top 0
+	left 0
+	background-image linear-gradient(360deg, #3F51B5, #00BCD4)
+	opacity 0.95
+	@media screen and (max-width: 600px)
+		margin-top ($base-height * 2) - 8
+		min-height 300px
+	
+.landing-page-container .cover-landing__title
+	flex 0 100%
+	z-index 1
+	color #FFF
+	text-transform uppercase
+	font-weight 300
+	text-shadow 0 0 0.5px #777
+	margin 0
+	padding 10px 30px 10px 30px
+	text-align center
+	margin-top $base-height * 2
+	@media screen and (max-width: 600px)
+		font-size 1.4em
+		text-shadow none
+		margin-top 0
+    
+.landing-page-container .cover-landing__accent-text
+	color $accent-color
+   
+.landing-page-container .cover-landing__title-second
+	flex 0 100%
+	z-index 1
+	color #FFF
+	font-weight 300
+	text-shadow 0 0 0.5px #777
+	text-align center
+	margin 0
+	padding 10px 30px 10px 30px
+	font-size 1.8em
+	@media screen and (max-width: 600px)
+		display none
+    
+.landing-page-container .cover-landing__btn
+	z-index 1
+	margin-top 30px
+	padding 10px 60px 10px 60px
+	color #FFF!important
+	background #EC407A!important
+	@media screen and (max-width: 600px)
+		padding 8px 12px 8px 12px
+		font-size 0.8em
+	
+.landing-page-container .portfolio
+	width 100%
+	min-height 500px
+	height auto
+	
+.landing-page-container .portfolio__title
+	margin 0
+	text-align center
+	padding 60px 30px 30px 30px
+	font-weight 300
+	@media screen and (max-width: 600px)
+		font-size 1.5em
+		padding 60px 30px 30px 30px
+		
+.landing-page-container .portfolio-container
+	max-width 1170px
+	margin 0 auto
+	display flex
+	flex-flow row wrap
+	justify-content center
+	align-items center
+	
+.landing-page-container .portfolio-item
+	width 250px
+	height 250px
+	margin 40px
+	display flex
+	flex-flow row wrap
+	justify-content center
+	align-items center
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	@media screen and (max-width: 992px)
+		width 200px
+		height 200px
+		margin 20px
+	@media screen and (min-width: 768px)
+		&:hover
+			.portfolio-item__cover
+				opacity 1
+				animation-name appearance
+				animation-duration .7s
+				
+			.portfolio-item__btn
+				display block
+				
+	@media screen and (max-width: 992px)
+		.portfolio-item__btn--mobile
+			display block
+		
+.landing-page-container .portfolio-item__cover
+	width 200px
+	height 200px
+	display flex
+	flex-flow row wrap
+	justify-content center
+	align-items center
+	background-color #fff
+	color $primary-text-color
+	text-align center
+	transition all .2s ease-in-out
+	font-weight 300
+	border-radius 2px
+	user-select none
+	font-size 0.9em
+	padding 10px
+	opacity 0	
+	@media screen and (max-width: 992px)
+		display none
+	
+.landing-page-container .portfolio-item__title
+	font-weight 700
+	margin 10px 0
+	
+.landing-page-container .portfolio-item__text
+	margin 10px 0
+	min-height 6em
+	max-height 6em
+	overflow hidden
+	line-height 1.2
+	@media screen and (max-width: 992px)
+		min-height 4em
+		max-height 4em
+	
+.landing-page-container .portfolio-item__btn
+	position relative
+	bottom 0
+	padding 5px 30px
+	border solid 1px $accent-color
+	color $accent-color
+	border-radius 30px
+	cursor pointer
+	transition background-color .2s ease-in-out
+	display none
+	&:hover
+		background-color $accent-color
+		color #fff
+		
+.landing-page-container .portfolio-item__btn--mobile
+	display none
+	width 50px
+	height 50px
+	border solid 1px $accent-color
+	color $accent-color
+	border-radius 50%
+	background-color rgba(255, 255, 255, 0.9)
+	text-align center
+	cursor pointer
+	
+.landing-page-container .portfolio-item__icon
+	position relative
+	top 12px
+	
+@keyframes appearance{
+	0%{
+		transform scale(0.6)
+	}
+	20%{
+		transform scale(1.4)
+	}
+	100%{
+		transform scale(1)
+	}
+}

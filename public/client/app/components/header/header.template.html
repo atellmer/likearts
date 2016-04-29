@@ -1,0 +1,59 @@
+<div class="header-container">
+	<header data-md-whiteframe="4" class="header-fixed">
+		<md-content>
+			<md-toolbar>
+				<div class="md-toolbar-tools header">
+					<md-button data-ng-click="toggle()" data-ng-hide="isOpen()" class="md-icon-button" data-aria-label="header">
+						<md-icon data-md-font-set="material-icons type-color">menu</md-icon>
+					</md-button>
+					<div data-ui-sref="root" class="logo"></div>
+					<span data-flex></span>
+					<nav>
+						<md-button data-hm-tap="showDialog($event)" class="md-icon-button phone-btn" data-aria-label="phone">
+							<md-icon md-font-set="material-icons type-color">phone</md-icon>
+						</md-button>
+						<div class="header__links">
+							<md-button data-aria-haspopup="true" data-hm-tap="showDialog($event)" class="type-color"><span class="header__phone">+7 (917) 048-68-66</span></md-button>
+							<md-button data-aria-haspopup="true" data-ui-sref="root" class="type-color">Главная</md-button>
+							<md-button data-aria-haspopup="true" data-ui-sref="blog" class="type-color">Блог</md-button>
+							<md-button data-aria-haspopup="true" data-ui-sref="contacts" class="type-color">Контакты</md-button>
+						</div>
+					</nav>
+				</div>
+			</md-toolbar>
+		</md-content>
+	</header>
+	<section data-layout="row" data-flex>
+		<md-sidenav class="md-sidenav-left position-fixed" data-md-component-id="menu" data-md-whiteframe="2">
+			<md-toolbar>
+				<h1 class="md-toolbar-tools header-menu"><div class="logo logo--invert"></div></h1>
+			</md-toolbar>
+			<md-divider></md-divider>
+			<nav>
+				<md-list>
+					<a data-ui-sref="root" class="menu__item">
+						<md-list-item data-aria-haspopup="true" data-ng-click="false">
+							<p>Главная</p>
+						</md-list-item>
+					</a>
+					<a data-ui-sref="blog" class="menu__item">
+						<md-list-item aria-haspopup="true" data-ng-click="false">
+							<p>Блог</p>
+						</md-list-item>
+					</a>
+					<a data-ui-sref="contacts" class="menu__item">
+						<md-list-item aria-haspopup="true" data-ng-click="false">
+							<p>Контакты</p>
+						</md-list-item>
+					</a>
+				</md-list>
+			</nav>
+			<md-divider></md-divider>
+			<md-content>
+				<lk-social-buttons></lk-social-buttons>
+			</md-content>
+			<md-divider></md-divider>
+			<h2 class="menu__phone">+7 (917) 048-68-66</h2>
+		</md-sidenav>
+	</section>
+</div>

@@ -1,0 +1,23 @@
+<div class="container no-padding">
+	<div class="row no-padding">
+		<div class="blog-container">
+			<div data-ng-repeat="item in vm.cards" class="col-sm-6 col-md-4 no-padding">
+				<md-card data-aria-haspopup="true" class="paper-shadow-z1 card">
+					<img data-ng-src="{{::item.image_anonce}}" class="md-card-image" alt="{{::item.alt_anonce}}">
+					<md-card-title>
+						<md-card-title-text>
+							<span class="md-headline">{{::item.title}}</span>
+						</md-card-title-text>
+					</md-card-title>
+					<md-card-content>
+						<p class="card__anonce">{{::item.text_anonce}}</p>
+					</md-card-content>
+					<div class="card__action">
+						<md-button data-ui-sref="post({id:{{::item.id}}})" data-aria-haspopup="true" data-md-no-ink class="md-primary">Подробнее</md-button>
+					</div>
+				</md-card>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="anchor"></div>
