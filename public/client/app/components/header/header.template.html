@@ -9,14 +9,18 @@
 					<div data-ui-sref="root" class="logo"></div>
 					<span data-flex></span>
 					<nav>
-						<md-button data-hm-tap="header.showDialog($event)" class="md-icon-button phone-btn" data-aria-label="phone">
-							<md-icon md-font-set="material-icons type-color">phone</md-icon>
-						</md-button>
-						<div class="header__links">
-							<md-button data-aria-haspopup="true" data-hm-tap="header.showDialog($event)" class="type-color"><span class="header__phone">+7 (917) 048-68-66</span></md-button>
-							<md-button data-aria-haspopup="true" data-ui-sref="root" class="type-color">Главная</md-button>
-							<md-button data-aria-haspopup="true" data-ui-sref="blog" class="type-color">Блог</md-button>
-							<md-button data-aria-haspopup="true" data-ui-sref="contacts" class="type-color">Контакты</md-button>
+						<div itemscope itemtype="http://schema.org/Organization">
+							<md-button data-hm-tap="header.showDialog($event)" class="md-icon-button phone-btn" data-aria-label="phone">
+								<md-icon md-font-set="material-icons type-color">phone</md-icon>
+							</md-button>
+							<div class="header__links">
+								<md-button data-aria-haspopup="true" data-hm-tap="header.showDialog($event)" class="type-color">
+									<span itemprop="telephone" class="header__phone">+7 (917) 048-68-66</span>
+								</md-button>
+								<md-button data-aria-haspopup="true" data-ui-sref="root" class="type-color">Главная</md-button>
+								<md-button data-aria-haspopup="true" data-ui-sref="blog" class="type-color">Блог</md-button>
+								<md-button data-aria-haspopup="true" data-ui-sref="contacts" class="type-color">Контакты</md-button>
+							</div>
 						</div>
 					</nav>
 				</div>
@@ -53,7 +57,9 @@
 				<lk-social-buttons></lk-social-buttons>
 			</md-content>
 			<md-divider></md-divider>
-			<h2 class="menu__phone">+7 (917) 048-68-66</h2>
+			<div itemscope itemtype="http://schema.org/Organization">
+				<h2 itemprop="telephone" class="menu__phone">+7 (917) 048-68-66</h2>
+			</div>
 		</md-sidenav>
 	</section>
 </div>

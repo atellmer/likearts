@@ -2,19 +2,22 @@
 	<div class="row no-padding">
 		<div class="blog-container">
 			<div data-ng-repeat="item in blog.cards" class="col-sm-6 col-md-4 no-padding">
-				<md-card data-aria-haspopup="true" class="paper-shadow-z1 card">
-					<img data-ng-src="{{::item.imageAnonce}}" class="md-card-image" alt="{{::item.title}}">
+				<md-card itemscope itemtype="http://schema.org/Article" data-aria-haspopup="true" class="paper-shadow-z1 card">
+					<div itemscope itemtype="http://schema.org/ImageObject">
+						<img itemprop="image" data-ng-src="{{::item.imageAnonce}}" class="md-card-image" alt="{{::item.title}}">
+					</div>
 					<md-card-title>
 						<md-card-title-text>
-							<span class="md-headline">{{::item.title}}</span>
+							<span itemprop="name" class="md-headline">{{::item.title}}</span>
 						</md-card-title-text>
 					</md-card-title>
 					<md-card-content>
-						<p class="card__anonce">{{::item.textAnonce}}</p>
+						<p itemprop="articleBody" class="card__anonce">{{::item.textAnonce}}</p>
 					</md-card-content>
 					<div class="card__action">
 						<md-button data-ui-sref="post({id:{{::item.id}}})" data-aria-haspopup="true" data-md-no-ink class="md-primary">Подробнее</md-button>
 					</div>
+					<meta itemprop="author" content="Likearts"/>
 				</md-card>
 			</div>
 		</div>
