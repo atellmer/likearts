@@ -1,5 +1,5 @@
 ;
-(function () {
+(function() {
 	'use strict';
 
 	angular
@@ -9,17 +9,17 @@
 	ContainerController.$inject = ['$window'];
 
 	function ContainerController($window) {
-		var vm = this;
-		vm.loadComplete = false;
-		
+		var container = this;
+		container.loadComplete = false;
+
 		activate();
-		
+
 		function activate() {
 			$window.onload = ready();
 		}
-		
+
 		function ready() {
-			vm.loadComplete = true;
+			container.loadComplete = true;
 		}
 	}
-}());
+})();

@@ -9,7 +9,7 @@
 	SocialButtonsController.$inject = ['lkSocial'];
 
 	function SocialButtonsController(lkSocial) {
-		var social = this;
+		var socialButtons = this;
 		var site = 'http://likearts.ru';
 		var title = 'LIKEARTS';
 		var	image = 'http://likearts.ru/public/client/img/social.png';
@@ -18,10 +18,10 @@
 		var youtubeChanel = 'UCaTkpm1PUpe9pPLcDbzQp1A';
 		var subscribe = '?sub_confirmation=1';
 
-		social.vk = vk;
-		social.yt = yt;
-		social.fb = fb;
-		social.tw = tw;
+		socialButtons.vk = vk;
+		socialButtons.yt = yt;
+		socialButtons.fb = fb;
+		socialButtons.tw = tw;
 
 		function vk() {
 			lkSocial.vk(site, title, image, description);
@@ -43,4 +43,4 @@
 			lkSocial.tw(site, title);
 		}
 	}
-}());
+})();

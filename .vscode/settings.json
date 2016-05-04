@@ -1,0 +1,34 @@
+// Поместите параметры в этот файл, чтобы перезаписать параметры по умолчанию.
+{
+    "editor.fontFamily": "Source Code Pro",
+    
+    "editor.insertSpaces": false,
+    
+    "files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true,
+        "**/node_modules/" : true
+	},
+    
+    "files.watcherExclude": {
+		"**/.git/objects/**": true,
+        "**/node_modules/": true
+	},
+    
+    "html.format.indentInnerHtml": true,
+    
+    "html.format.endWithNewline": true,
+	
+	"beautify.onSave": false,
+	
+	"beautify.JSfiles": [
+		"js",
+		"json",
+		"jsbeautifyrc",
+		"jshintrc",
+		"ts",
+		"jsx"
+	],
+	
+	"files.autoSave": "afterDelay"
+}

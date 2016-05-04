@@ -5,7 +5,7 @@
 				<div class="md-toolbar-tools dialog-toolbar">
 					<h2 class="dialog-toolbar__title">Заказать звонок</h2>
 					<span data-flex></span>
-					<md-button class="md-icon-button" data-hm-tap="vm.cancel()">
+					<md-button class="md-icon-button" data-hm-tap="phoneDialog.cancel()">
 						<md-icon class="dialog-toolbar__icon" data-md-font-set="material-icons">close</md-icon>
 					</md-button>
 				</div>
@@ -14,17 +14,17 @@
 				<md-input-container data-valdr-form-group class=" md-icon-float md-block">
 					<label>Имя</label>
 					<md-icon data-md-font-set="material-icons dialog-content__icon">person</md-icon>
-					<input type="text" id="name" name="name" data-ng-model="vm.data.name" required>
+					<input type="text" id="name" name="name" data-ng-model="phoneDialog.data.name" required>
 				</md-input-container>
 				<md-input-container data-valdr-form-group class="md-icon-float md-block">
 					<label>Телефон</label>
 					<md-icon data-md-font-set="material-icons dialog-content__icon">phone</md-icon>
-					<input type="text" id="phone" name="phone" data-ng-model="vm.data.phone" required>
+					<input type="text" id="phone" name="phone" data-ng-model="phoneDialog.data.phone" required>
 				</md-input-container>
 			</md-dialog-content>
 			<md-dialog-actions data-layout="row">
 				<span data-flex></span>
-				<md-button data-hm-tap="vm.send()" data-ng-disabled="phoneOrderForm.$invalid" class="md-primary md-hue-1">
+				<md-button data-hm-tap="phoneDialog.send()" data-ng-disabled="phoneOrderForm.$invalid" class="md-primary md-hue-1">
 					Перезвоните мне
 				</md-button>
 			</md-dialog-actions>

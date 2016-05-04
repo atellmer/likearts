@@ -3,17 +3,17 @@
 		<md-content>
 			<md-toolbar>
 				<div class="md-toolbar-tools header">
-					<md-button data-ng-click="toggle()" data-ng-hide="isOpen()" class="md-icon-button" data-aria-label="header">
+					<md-button data-ng-click="header.toggle()" data-ng-hide="header.isOpen()" class="md-icon-button" data-aria-label="header">
 						<md-icon data-md-font-set="material-icons type-color">menu</md-icon>
 					</md-button>
 					<div data-ui-sref="root" class="logo"></div>
 					<span data-flex></span>
 					<nav>
-						<md-button data-hm-tap="showDialog($event)" class="md-icon-button phone-btn" data-aria-label="phone">
+						<md-button data-hm-tap="header.showDialog($event)" class="md-icon-button phone-btn" data-aria-label="phone">
 							<md-icon md-font-set="material-icons type-color">phone</md-icon>
 						</md-button>
 						<div class="header__links">
-							<md-button data-aria-haspopup="true" data-hm-tap="showDialog($event)" class="type-color"><span class="header__phone">+7 (917) 048-68-66</span></md-button>
+							<md-button data-aria-haspopup="true" data-hm-tap="header.showDialog($event)" class="type-color"><span class="header__phone">+7 (917) 048-68-66</span></md-button>
 							<md-button data-aria-haspopup="true" data-ui-sref="root" class="type-color">Главная</md-button>
 							<md-button data-aria-haspopup="true" data-ui-sref="blog" class="type-color">Блог</md-button>
 							<md-button data-aria-haspopup="true" data-ui-sref="contacts" class="type-color">Контакты</md-button>

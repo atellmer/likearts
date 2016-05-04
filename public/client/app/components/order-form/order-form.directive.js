@@ -12,7 +12,7 @@
 			replace: true,
 			restrict: 'E',
 			controller: 'OrdeFormController',
-			controllerAs: 'vm'
+			controllerAs: 'orderForm'
 		}
 
 		return directive;

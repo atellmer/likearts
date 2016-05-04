@@ -9,24 +9,24 @@
 	PhoneDialogController.$inject = ['$http', '$sanitize', '$mdDialog', '$mdToast'];
 
 	function PhoneDialogController($http, $sanitize, $mdDialog, $mdToast) {
-		var vm = this;
+		var phoneDialog = this;
 		var toast = angular.element(document.querySelector('#toast'));
 		var toastText = 'Ок! Мы вам перезвоним!';
 
-		vm.data = {
+		phoneDialog.data = {
 			name: null,
 			phone: null
 		};
 
-		vm.send = send;
-		vm.cancel = cancel;
+		phoneDialog.send = send;
+		phoneDialog.cancel = cancel;
 
 		function send() {
-			vm.data.name = $sanitize(vm.data.name);
-			vm.data.phone = $sanitize(vm.data.phone);
-			vm.data = JSON.stringify(vm.data);
-			console.log(vm.data);
-			$http.post('/phone', vm.data).success(function (response) {
+			phoneDialog.data.name = $sanitize(phoneDialog.data.name);
+			phoneDialog.data.phone = $sanitize(phoneDialog.data.phone);
+			phoneDialog.data = JSON.stringify(phoneDialog.data);
+			console.log(phoneDialog.data);
+			$http.post('/phone', phoneDialog.data).success(function (response) {
 				$mdToast.show(
 					$mdToast.simple()
 					.textContent(toastText)
@@ -43,4 +43,4 @@
 			$mdDialog.cancel();
 		}
 	}
-}());
+})();

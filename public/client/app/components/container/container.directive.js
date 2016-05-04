@@ -12,9 +12,9 @@
 			replace: true,
 			restrict: 'E',
 			controller: 'ContainerController',
-			controllerAs: 'vm'
+			controllerAs: 'container'
 		}
 		
 		return directive;
 	}
-}());
+})();

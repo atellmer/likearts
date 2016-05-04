@@ -13,8 +13,8 @@
 			replace: true,
 			restrict: 'E',
 			controller: 'SocialButtonsController',
-			controllerAs: 'social'
+			controllerAs: 'socialButtons'
 		}
 		return directive;
 	}
-}());
+})();

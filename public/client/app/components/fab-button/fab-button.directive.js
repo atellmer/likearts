@@ -13,9 +13,9 @@
 			replace: true,
 			restrict: 'E',
 			controller: 'FabButtonController',
-			controllerAs: 'vm'
+			controllerAs: 'fabButton'
 		}
 		
 		return directive;
 	}
-}());
+})();

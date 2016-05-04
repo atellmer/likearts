@@ -9,14 +9,14 @@
 	FabButtonController.$inject = ['lkMove'];
 
 	function FabButtonController(lkMove) {
-		var vm = this;
+		var fabButton = this;
 
-		vm.isOpen = false;
-		vm.selectedMode = 'md-fling';
-		vm.selectedDirection = 'up';
-		vm.hover = false;
+		fabButton.isOpen = false;
+		fabButton.selectedMode = 'md-fling';
+		fabButton.selectedDirection = 'up';
+		fabButton.hover = false;
 
-		vm.toTopWithAnimate = lkMove.toTopWithAnimate;
-		vm.toBack = lkMove.toBack;
+		fabButton.toTopWithAnimate = lkMove.toTopWithAnimate;
+		fabButton.toBack = lkMove.toBack;
 	}
-}());
+})();

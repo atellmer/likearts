@@ -12,9 +12,10 @@
 			templateUrl: '../public/client/app/components/header/header.template.html',
 			replace: true,
 			restrict: 'E',
-			controller: 'HeaderController'
+			controller: 'HeaderController',
+			controllerAs: 'header'
 		};
 		
 		return directive;
 	}
-}());
+})();

@@ -5,23 +5,23 @@
 			<div class="input-container">
 				<label class="form-label form-label--input">Какой проект Вам необходим?</label>
 				<md-input-container class="md-block">
-					<md-select placeholder="Выбрать..." ng-model="vm.select" ng-change="vm.calculate()" required>
-						<md-option ng-repeat="item in vm.projects track by $index" value="{{::$index}}">{{::item.name}}</md-option>
+					<md-select placeholder="Выбрать..." ng-model="orderForm.select" ng-change="orderForm.calculate()" required>
+						<md-option ng-repeat="item in orderForm.projects track by $index" value="{{::$index}}">{{::item.name}}</md-option>
 					</md-select>
 				</md-input-container>
 			</div>
 			<div class="chekbox-container" layout="column">
 				<label class="form-label form-label--checkbox">Дополнительные услуги:</label>
-				<md-checkbox ng-repeat="item in vm.services" ng-model="item.checked" ng-change="vm.calculate()" aria-label="Service">
+				<md-checkbox ng-repeat="item in orderForm.services" ng-model="item.checked" ng-change="orderForm.calculate()" aria-label="Service">
 					{{::item.name}}
 				</md-checkbox>
 			</div>
 			<div class="calculation">
-				<span class="calculation__result">Итого: {{vm.cost}} руб.</span>
+				<span class="calculation__result">Итого: {{orderForm.cost}} руб.</span>
 			</div>
 			<div class="note">* Сумма может меняться в процессе согласования</div>
 			<div class="order-btn" layout="row" layout-align="center center">
-				<md-button hm-tap="vm.showDialog($event)" class="md-raised md-primary order-btn__btn">Заказать разработку...</md-button>
+				<md-button hm-tap="orderForm.showDialog($event)" class="md-raised md-primary order-btn__btn">Заказать разработку...</md-button>
 			</div>
 		</form>
 	</div>

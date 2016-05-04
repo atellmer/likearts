@@ -1,15 +1,15 @@
 <div class="fab-container" data-ng-cloak>
-	<md-fab-speed-dial data-md-open="vm.isOpen" data-md-direction="{{vm.selectedDirection}}" data-ng-class="vm.selectedMode">
+	<md-fab-speed-dial data-md-open="fabButton.isOpen" data-md-direction="{{fabButton.selectedDirection}}" data-ng-class="fabButton.selectedMode">
 		<md-fab-trigger>
 			<md-button data-aria-label="menu" class="md-fab fab">
-				<md-icon data-ng-class="{'fab-icon-hover':vm.isOpen}" data-md-font-set="material-icons fab-icon">add</md-icon>
+				<md-icon data-ng-class="{'fab-icon-hover':fabButton.isOpen}" data-md-font-set="material-icons fab-icon">add</md-icon>
 			</md-button>
 		</md-fab-trigger>
 		<md-fab-actions>
-			<md-button data-hm-tap="vm.toBack()" data-ng-class="{'paper-shadow-z1':vm.isOpen}" data-aria-label="Назад" class="md-fab md-raised md-mini">
+			<md-button data-hm-tap="fabButton.toBack()" data-ng-class="{'paper-shadow-z1':fabButton.isOpen}" data-aria-label="Назад" class="md-fab md-raised md-mini">
 				<md-icon data-md-font-set="material-icons fab-mini-icon">arrow_back</md-icon>
 			</md-button>
-			<md-button data-hm-tap="vm.toTopWithAnimate()" data-ng-class="{'paper-shadow-z1':vm.isOpen}" data-aria-label="Наверх" class="md-fab md-raised md-mini">
+			<md-button data-hm-tap="fabButton.toTopWithAnimate()" data-ng-class="{'paper-shadow-z1':fabButton.isOpen}" data-aria-label="Наверх" class="md-fab md-raised md-mini">
 				<md-icon data-md-font-set="material-icons fab-mini-icon">arrow_upward</md-icon>
 			</md-button>
 		</md-fab-actions>

@@ -9,12 +9,13 @@
 	HeaderController.$inject = ['$scope', '$mdSidenav', '$mdDialog'];
 
 	function HeaderController($scope, $mdSidenav, $mdDialog) {
+		var header = this;
 		var menuId = 'menu';
 		var parent = angular.element(document.querySelector('body'));
 
-		$scope.toggle = toggle;	
-		$scope.isOpen = isOpen;	
-		$scope.showDialog = showDialog;
+		header.toggle = toggle;	
+		header.isOpen = isOpen;	
+		header.showDialog = showDialog;
 		
 		function isOpen() {
 			$mdSidenav(menuId).isOpen();
@@ -31,8 +32,8 @@
 				targetEvent: event,
 				clickOutsideToClose: true,
 				controller: 'PhoneDialogController',
-				controllerAs: 'vm'
+				controllerAs: 'phoneDialog'
 			});
 		}
 	}
-}());
+})();

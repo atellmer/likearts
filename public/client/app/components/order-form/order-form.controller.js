@@ -8,15 +8,15 @@
 	OrdeFormController.$inject = ['$http', '$mdDialog', 'lkStore'];
 
 	function OrdeFormController($http, $mdDialog, lkStore) {
-		var vm = this;
+		var orderForm = this;
 		var path = '/getprices';
 		var parent = angular.element(document.querySelector('body'));
 
-		vm.projects = [];
-		vm.services = [];
-		vm.cost = 0;
-		vm.calculate = calculate;
-		vm.showDialog = showDialog;
+		orderForm.projects = [];
+		orderForm.services = [];
+		orderForm.cost = 0;
+		orderForm.calculate = calculate;
+		orderForm.showDialog = showDialog;
 
 		activate();
 
@@ -26,11 +26,11 @@
 				var k = 0;
 				for (var i = 0; i < response.length; i++) {
 					if (response[i].type === 'сайт') {
-						vm.projects[j] = response[i];
+						orderForm.projects[j] = response[i];
 						j++;
 					}
 					if (response[i].type === 'услуга') {
-						vm.services[k] = response[i];
+						orderForm.services[k] = response[i];
 						k++;
 					}
 				}
@@ -38,35 +38,35 @@
 		}
 
 		function calculate() {
-			vm.cost = 0;
+			orderForm.cost = 0;
 
-			if (vm.select) {
-				vm.cost += vm.projects[vm.select].price;
+			if (orderForm.select) {
+				orderForm.cost += orderForm.projects[orderForm.select].price;
 
-				lkStore.project = vm.projects[vm.select].name;
+				lkStore.project = orderForm.projects[orderForm.select].name;
 			}
 
-			for (var i = 0; i < vm.services.length; i++) {
-				if (vm.services[i].checked) {
-					vm.cost += vm.services[i].price;
+			for (var i = 0; i < orderForm.services.length; i++) {
+				if (orderForm.services[i].checked) {
+					orderForm.cost += orderForm.services[i].price;
 
 					if (lkStore.services.length === 0) {
-						lkStore.services.push(vm.services[i].name);
+						lkStore.services.push(orderForm.services[i].name);
 					}
 
-					if (filter(lkStore.services, vm.services[i].name)) {
-						lkStore.services.push(vm.services[i].name);
+					if (filter(lkStore.services, orderForm.services[i].name)) {
+						lkStore.services.push(orderForm.services[i].name);
 					}
 				} else {
 					for (var j = 0; j < lkStore.services.length; j++) {
-						if (lkStore.services[j] === vm.services[i].name) {
+						if (lkStore.services[j] === orderForm.services[i].name) {
 							lkStore.services.splice(j, 1);
 						}
 					}
 				}
 			}
 
-			lkStore.cost = vm.cost;
+			lkStore.cost = orderForm.cost;
 		}
 
 		function filter(array, row) {
@@ -88,7 +88,7 @@
 				targetEvent: event,
 				clickOutsideToClose: true,
 				controller: 'OrderDialogController',
-				controllerAs: 'vm'
+				controllerAs: 'orderDialog'
 			});
 		}
 	}

@@ -9,7 +9,7 @@
 	PostController.$inject = ['$http', '$stateParams', 'lkMove'];
 
 	function PostController($http, $stateParams, lkMove) {
-		var vm = this;
+		var post = this;
 		var id = $stateParams.id;
 		var path = '/getpost/' + id;
 		
@@ -19,7 +19,7 @@
 			lkMove.toTop();
 			
 			$http.get(path).success(function (response) {
-				vm.post = response;
+				post.item = response;
 			});
 		}
 	}

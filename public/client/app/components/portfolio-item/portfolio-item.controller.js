@@ -8,7 +8,7 @@
 	PortfolioItemController.$inject = ['$http', '$stateParams', 'lkMove'];
 
 	function PortfolioItemController($http, $stateParams, lkMove) {
-		var vm = this;
+		var portfolioItem = this;
 		var id = $stateParams.id;
 		var	path = '/getportfolio/' + id;
 
@@ -18,7 +18,7 @@
 			lkMove.toTop();
 			
 			$http.get(path).success(function (response) {
-				vm.item = response;
+				portfolioItem.item = response;
 			});
 		}
 	}

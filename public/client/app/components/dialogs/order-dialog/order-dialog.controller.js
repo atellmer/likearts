@@ -10,10 +10,10 @@
 	OrderDialogController.$inject = ['$http', '$sanitize', '$mdDialog', '$mdToast', 'lkStore'];
 
 	function OrderDialogController($http, $sanitize, $mdDialog, $mdToast, lkStore) {
-		var vm = this;	
+		var orderDialog = this;	
 		var toast = angular.element(document.querySelector('#toast'));
 		
-		vm.data = {
+		orderDialog.data = {
 				name: null,
 				phone: null,
 				email: null,
@@ -22,18 +22,18 @@
 				services: null
 			};
 
-		vm.send = send;
-		vm.cancel = cancel;
+		orderDialog.send = send;
+		orderDialog.cancel = cancel;
 		
 		function send() {
-			vm.data.name = $sanitize(vm.data.name);
-			vm.data.phone = $sanitize(vm.data.phone);
-			vm.data.email = $sanitize(vm.data.email);
-			vm.data.cost = lkStore.cost ? lkStore.cost : 'Не заполнено';
-			vm.data.project = lkStore.project ? lkStore.project : 'Не заполнено';
-			vm.data.services = lkStore.services.length > 0 ? lkStore.services : 'Не заполнено';
-			vm.data = JSON.stringify(vm.data);
-			$http.post('/order', vm.data).success(function (response) {
+			orderDialog.data.name = $sanitize(orderDialog.data.name);
+			orderDialog.data.phone = $sanitize(orderDialog.data.phone);
+			orderDialog.data.email = $sanitize(orderDialog.data.email);
+			orderDialog.data.cost = lkStore.cost ? lkStore.cost : 'Не заполнено';
+			orderDialog.data.project = lkStore.project ? lkStore.project : 'Не заполнено';
+			orderDialog.data.services = lkStore.services.length > 0 ? lkStore.services : 'Не заполнено';
+			orderDialog.data = JSON.stringify(orderDialog.data);
+			$http.post('/order', orderDialog.data).success(function (response) {
 				$mdToast.show(
 					$mdToast.simple()
 					.textContent('Ваш заказ отправлен! Спасибо!')
@@ -49,4 +49,4 @@
 			$mdDialog.cancel();
 		}
 	}
-}());
+})();

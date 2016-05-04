@@ -9,4 +9,4 @@
 				'ngSanitize', 
 				'valdr'
 			]);
-}());
+})();

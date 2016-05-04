@@ -1,5 +1,5 @@
 ;
-(function () {
+(function() {
 	'use strict';
 	angular
 		.module('app')
@@ -21,23 +21,23 @@
 				url: '/blog',
 				templateUrl: '../public/client/app/components/blog/blog.template.html',
 				controller: 'BlogController',
-				controllerAs: 'vm'
+				controllerAs: 'blog'
 			})
 			.state('post', {
 				url: '/blog/:id',
 				templateUrl: '../public/client/app/components/post/post.template.html',
 				controller: 'PostController',
-				controllerAs: 'vm'
+				controllerAs: 'post'
 			})
 			.state('portfolio', {
 				url: '/portfolio/:id',
 				templateUrl: '../public/client/app/components/portfolio-item/portfolio-item.template.html',
 				controller: 'PortfolioItemController',
-				controllerAs: 'vm'
+				controllerAs: 'portfolioItem'
 			})
 			.state('contacts', {
 				url: '/contacts',
 				templateUrl: '../public/client/app/components/contacts-page/contacts-page.template.html'
 			});
 	}
-}());
+})();
