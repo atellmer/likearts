@@ -5,7 +5,7 @@
 	angular
 		.module('app')
 		.factory('lkSeo', lkSeo);
-		
+
 	lkSeo.$inject = ['$rootScope', '$http', '$timeout'];
 
 	function lkSeo($rootScope, $http, $timeout) {
@@ -20,41 +20,50 @@
 			keywords: '',
 			image: ''
 		};
-			
+
 		function getSeo() {
-			$timeout(function(){
+			$timeout(function () {
 				url = document.location.href.split('/');
 				url = url.slice(3, url.length);
-				
-				if(url.length === 1) {
-					if(url[0] === '') {
-						parseSeoData('/');
+
+				if (url.length === 1) {
+					if (url[0] === '') {
+						getSeoData('/');
 					} else {
-						parseSeoData('/' + url[0] + '/');
+						getSeoData('/' + url[0] + '/');
 					}
 				} else {
 					params = '/';
 					for (var i = 0; i < url.length; i++) {
 						params += url[i] + '/';
 					}
-					parseSeoData(params);
+					getSeoData(params);
 				}
-			}, 0);	
+			}, 0);
 		}
-		
-		function parseSeoData(param) {
-			$http.get(path).success(function(response) {
-				data = response;	
-				for (var i = 0; i < data.length; i++) {
-					if(data[i].url === param) {
-						seoFactory.title = data[i].title;
-						seoFactory.description = data[i].description;
-						seoFactory.keywords = data[i].keywords;
-						seoFactory.image = data[i].image;
-					}
-				}
+
+		function getSeoData(param) {
+			if(data.length === 0) {
+				$http.get(path).success(function (response) {
+					data = response;
+					parseSeoData(param);
+					$rootScope.$emit('updateSEO');
+				});
+			} else {
+				parseSeoData(param);
 				$rootScope.$emit('updateSEO');
-			});	
+			}	
+		}
+
+		function parseSeoData(param) {
+			for (var i = 0; i < data.length; i++) {
+				if (data[i].url === param) {
+					seoFactory.title = data[i].title;
+					seoFactory.description = data[i].description;
+					seoFactory.keywords = data[i].keywords;
+					seoFactory.image = data[i].image;
+				}
+			}
 		}
 		return seoFactory;
 	}
