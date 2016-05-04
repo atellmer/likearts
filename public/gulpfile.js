@@ -37,12 +37,13 @@ gulp.task('scripts', function () {
 	return gulp.src([
 		path.app() + '**/*.module.js',
 		path.app() + '**/*.config.js',
+		path.app() + '**/*.factory.js',
 		path.app() + '**/*.service.js',
 		path.app() + '**/*.directive.js',
 		path.app() + '**/*.controller.js'
 	])
 		.pipe(concat('bundle.js'))
-		.pipe(uglify())
+		//.pipe(uglify())
 		.pipe(rename('bundle.min.js'))
 		.pipe(gulp.dest(path.dist()))
 		.pipe(connect.reload());

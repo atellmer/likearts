@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Post;
 use App\Models\Portfolio;
 use App\Models\Price;
+use App\Models\Seo;
 
 class RestController extends Controller
 {
@@ -47,6 +49,13 @@ class RestController extends Controller
 		$prices = $priceModel -> getPrices();
 		
 		return $prices;
+	}
+	
+	public function getSeo(Seo $seoModel)
+	{
+		$seo = $seoModel -> getSeo();
+		
+		return $seo;
 	}
 	
 	public function order(Request $request)

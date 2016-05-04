@@ -5,9 +5,9 @@
 		.module('app')
 		.controller('BlogController', BlogController);
 
-	BlogController.$inject = ['$scope', '$http', '$window'];
+	BlogController.$inject = ['$scope', '$http', '$window', 'lkSeo'];
 
-	function BlogController($scope, $http, $window) {
+	function BlogController($scope, $http, $window, lkSeo) {
 		var blog = this;
 		var cash = {};
 		var last = 0;
@@ -27,6 +27,8 @@
 		activate();
 
 		function activate() {
+			lkSeo.getSeo();
+			
 			$http.get(path).success(function(response) {
 				cash = response;
 				blog.cards = cash.slice(0, initial);

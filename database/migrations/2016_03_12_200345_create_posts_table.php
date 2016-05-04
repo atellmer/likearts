@@ -15,12 +15,10 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->nullable();
-            $table->string('image_anonce')->nullable();
-			$table->string('image_detail')->nullable();
-			$table->string('alt_anonce')->nullable();
-			$table->string('alt_detail')->nullable();
-            $table->text('text_anonce')->nullable();
-            $table->text('text_detail')->nullable();
+            $table->string('imageAnonce')->nullable();
+			$table->string('imageDetail')->nullable();
+            $table->text('textAnonce')->nullable();
+            $table->text('textDetail')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

@@ -9,6 +9,7 @@ Route::get('getportfolio/{id}', ['as' => 'portfolioItem.get', 'uses' => 'RestCon
 Route::get('getprices', ['as' => 'prices.get', 'uses' => 'RestController@getPrices']);
 Route::post('order', ['as' => 'order.post', 'uses' => 'RestController@order']);
 Route::post('phone', ['as' => 'phone.post', 'uses' => 'RestController@phone']);
+Route::get('getseo', ['as' => 'seo.get', 'uses' => 'RestController@getSeo']);
 
 Route::any('{path?}', function() {
 	return File::get(public_path() . '/client/index.php');

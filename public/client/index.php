@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru" data-ng-app="app">
 
-<head>
+<head data-ng-controller="SeoController as seo">
 	<base href="/">
 	<meta name="fragment" content="!">
 	<meta charset="UTF-8">
@@ -32,18 +32,18 @@
 	<meta property="vk:app_id" content="5353912">
 	<meta property="og:url" content="http://likearts.ru">
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Likearts | Мы делаем сайты на заказ для вашего бизнеса">
-	<meta property="og:description" content="Likearts: только качественные сайты, потому что репутация решает.">
-	<meta property="og:image" content="public/client/img/social.png">
+	<meta property="og:title" content="{{seo.title}}">
+	<meta property="og:description" content="{{seo.description}}">
+	<meta property="og:image" content="{{seo.image}}">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@likearts">
 	<meta name="twitter:creator" content="@likearts">
 	<meta name="twitter:title" content="likearts.ru">
-	<meta name="twitter:description" content="Мы делаем сайты на заказ для вашего бизнеса">
-	<meta name="twitter:image" content="public/client/img/social.png">
-	<title>Likearts | Мы делаем сайты на заказ для вашего бизнеса</title>
-	<meta name="description" content="Likearts: только качественные сайты, потому что репутация решает.">
-	<meta name="keywords" content="создание сайтов, разработка сайтов, лендинг пейдж, landing page, сайт под ключ">
+	<meta name="twitter:description" content="{{seo.description}}">
+	<meta name="twitter:image" content="{{seo.image}}">
+	<title>{{seo.title}}</title>
+	<meta name="description" content="{{seo.description}}">
+	<meta name="keywords" content="{{seo.keywords}}">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="google-site-verification" content="u9f26_lGx5wnttybbPTfvzmqbT9kJYlrqNtFi3rFo_w">
 	<meta name="yandex-verification" content="6776dc3d70e6a139">

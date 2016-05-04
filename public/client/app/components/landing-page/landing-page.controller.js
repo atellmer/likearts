@@ -6,9 +6,9 @@
 		.module('app')
 		.controller('LandingPageController', LandingPageController);
 
-	LandingPageController.$inject = ['$http'];
+	LandingPageController.$inject = ['$http', 'lkSeo'];
 
-	function LandingPageController($http) {
+	function LandingPageController($http, lkSeo) {
 		var landing = this;
 		var anchor = angular.element(document.querySelector('#scroll-here'));
 		var body = angular.element(document.querySelector('body'));
@@ -21,6 +21,8 @@
 		activate();
 
 		function activate() {
+			lkSeo.getSeo();
+			
 			$http.get(pathToprtfolio).success(function (response) {
 				landing.portfolio = response;
 			});

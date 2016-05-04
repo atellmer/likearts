@@ -5,7 +5,7 @@
 		.module('app')
 		.config(router);
 
-	router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', 'valdrProvider'];
+	router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
 	function router($stateProvider, $urlRouterProvider, $locationProvider) {
 		$locationProvider.html5Mode(true);
@@ -37,7 +37,9 @@
 			})
 			.state('contacts', {
 				url: '/contacts',
-				templateUrl: '../public/client/app/components/contacts-page/contacts-page.template.html'
+				templateUrl: '../public/client/app/components/contacts-page/contacts-page.template.html',
+				controller: 'ContactsPageController',
+				controllerAs: 'contacts'
 			});
 	}
 })();
