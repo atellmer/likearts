@@ -13,6 +13,7 @@
 		var url = '';
 		var params = '/';
 		var data = [];
+		var postfix = ' | Likearts — Сайты на заказ'
 		var seoFactory = {
 			getSeo: getSeo,
 			title: '',
@@ -58,7 +59,7 @@
 		function parseSeoData(param) {
 			for (var i = 0; i < data.length; i++) {
 				if (data[i].url === param) {
-					seoFactory.title = data[i].title;
+					seoFactory.title = data[i].title + postfix;
 					seoFactory.description = data[i].description;
 					seoFactory.keywords = data[i].keywords;
 					seoFactory.image = data[i].image;

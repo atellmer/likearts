@@ -30,5 +30,5 @@
 		"jsx"
 	],
 	
-	"files.autoSave": "afterDelay"
+	"files.autoSave": "off"
 }

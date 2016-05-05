@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru" data-ng-app="app">
 
-<head data-ng-controller="SeoController as seo">
+<head data-ng-controller="HeadController as head">
 	<base href="/">
 	<meta name="fragment" content="!">
 	<meta charset="UTF-8">
@@ -32,18 +32,18 @@
 	<meta property="vk:app_id" content="5353912">
 	<meta property="og:url" content="http://likearts.ru">
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="{{seo.title}}">
-	<meta property="og:description" content="{{seo.description}}">
-	<meta property="og:image" content="{{seo.image}}">
+	<meta property="og:title" content="{{head.title ? head.title : head.defaultTitle}}">
+	<meta property="og:description" content="{{head.description ? head.description : head.defaultDescription}}">
+	<meta property="og:image" content="{{head.image ? head.image : head.defaultImage}}">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@likearts">
 	<meta name="twitter:creator" content="@likearts">
-	<meta name="twitter:title" content="likearts.ru">
-	<meta name="twitter:description" content="{{seo.description}}">
-	<meta name="twitter:image" content="{{seo.image}}">
-	<title>{{seo.title}}</title>
-	<meta name="description" content="{{seo.description}}">
-	<meta name="keywords" content="{{seo.keywords}}">
+	<meta name="twitter:title" content="{{head.title ? head.title : head.defaultTitle}}">
+	<meta name="twitter:description" content="{{head.description ? head.description : head.defaultDescription}}">
+	<meta name="twitter:image" content="{{head.image ? head.image : head.defaultImage}}">
+	<title data-ng-bind="head.title ? head.title : head.defaultTitle"></title>
+	<meta name="description" content="{{head.description ? head.description : head.defaultDescription}}">
+	<meta name="keywords" content="{{head.keywords ? head.keywords : head.defaultKeywords}}">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="google-site-verification" content="u9f26_lGx5wnttybbPTfvzmqbT9kJYlrqNtFi3rFo_w">
 	<meta name="yandex-verification" content="6776dc3d70e6a139">
